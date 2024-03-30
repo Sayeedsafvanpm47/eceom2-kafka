@@ -22,3 +22,12 @@ jobs:
        env: 
          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+     - uses: digitalocean/action-doctl@v2
+       with:
+         token: ${{secrets.DIGITAL_OCEAN_ACCESS_TOKEN}}
+     - name: Digital ocean config
+       run: |
+         doctl kubernetes cluster kubeconfig save ticket
+         kubectl rollout restart deployment ticket-depl
+         
+      
