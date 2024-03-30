@@ -20,6 +20,7 @@ async function consumer(group, topic, messageHandler) {
                     await messageHandler(msg);
                 } catch (error) {
                     console.error('Error processing messages:', error);
+                    console.log('added a new test')
                 }
             }
         });
