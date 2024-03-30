@@ -6,11 +6,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: customer
+      app: customer-2
   template:
     metadata:
       labels: 
-        app: customer 
+        app: customer-2 
     spec: 
       containers: 
         - name: customer
@@ -22,9 +22,9 @@ metadata:
   name: customer-srv
 spec: 
   selector:
-    app: customer 
+    app: customer-2 
   ports:
-  - name: customer 
+  - name: customer-2  
     protocol: TCP 
     port: 3003
     targetPort: 3003

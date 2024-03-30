@@ -8,27 +8,27 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
-  - host: ecom2.com
+  - host: ticketing.dev
     http:
       paths:
-      - path: /products/?(.*)
+      - path: /tickets/?(.*)
         pathType: Prefix
         backend:
           service:
-            name: products-srv
+            name: tickets-srv
             port:
               number: 3001
-      - path: /orders/?(.*)  # Update service name here
+      - path: /orders/?(.*) 
         pathType: Prefix
         backend:
           service:
-            name: orders-srv  # Change to orders-srv
+            name: orders-srv  
             port:
               number: 3002
-      - path: /customer/?(.*)  # Update service name here
+      - path: /customer/?(.*)  
         pathType: Prefix
         backend:
           service:
-            name: customer-srv  # Change to orders-srv
+            name: customer-srv  
             port:
               number: 3003

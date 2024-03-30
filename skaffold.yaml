@@ -8,8 +8,8 @@ build:
     push: false 
   
   artifacts:
-    - image: sydsfn/products-demo-2
-      context: products
+    - image: sydsfn/tickets-demo-2
+      context: tickets
       docker:
         dockerfile: Dockerfile
       sync:
@@ -17,7 +17,7 @@ build:
           - src: '**/*.js'
             dest: .
     - image: sydsfn/orders-demo-2
-      context: orders
+      context: orders2
       docker:
         dockerfile: Dockerfile
       sync:

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema(
+const TicketSchema = new Schema(
   {
     name: {
       type: String,
@@ -19,4 +19,4 @@ const ProductSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Product", ProductSchema);
+module.exports = mongoose.model("Tickets", TicketSchema);
