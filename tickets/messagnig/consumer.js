@@ -21,7 +21,7 @@ async function consumer(group, topic, messageHandler) {
                 } catch (error) {
 
                     console.error('Error processing messages:', error);
-                    console.log('added a new test')
+                    console.log('added new workflows')
 
                 }
             }
