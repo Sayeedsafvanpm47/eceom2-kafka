@@ -13,11 +13,11 @@ jobs:
     steps:
      -  uses: actions/checkout@v2 
      -  name: Build Docker image
-        run: |
+        run: 
           cd tickets 
           docker build -t sydsfn/tickets-demo-2 .
      -  name: Login to Docker Hub
-        run: |
+        run: 
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env: 
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
