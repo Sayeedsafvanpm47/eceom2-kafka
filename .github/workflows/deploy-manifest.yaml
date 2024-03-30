@@ -16,9 +16,9 @@ jobs:
      - uses: digitalocean/action-doctl@v2
        with:
          token: ${{secrets.DIGITAL_OCEAN_ACCESS_TOKEN}}
-     - name: Digital ocean config
+         
+     - name: Deploy Kubernetes Manifests
        run: |
+         set -e
          doctl kubernetes cluster kubeconfig save ticket
          kubectl apply -f infra/k8s
-         
-      
