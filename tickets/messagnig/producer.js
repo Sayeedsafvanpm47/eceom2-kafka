@@ -7,8 +7,7 @@ async function producer(topic,message)
          await produce.send({
           topic,messages:[{value:message}]
          })
-         console.log('Message send successfully!')
-        
+         console.log('Message send finished successfully!')
 
 
 }
