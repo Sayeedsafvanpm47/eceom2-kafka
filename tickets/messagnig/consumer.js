@@ -7,6 +7,7 @@ async function consumer(group, topic, messageHandler) {
     try {
         await consumer.connect();
         console.log('Consumer connected successfully!');
+        console.log('added a new thing')
 
         await consumer.subscribe({ topic: topic, fromBeginning: true });
         console.log('Subscribed to topic:', topic);
