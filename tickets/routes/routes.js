@@ -92,7 +92,7 @@ router.post('/buy', authenticate, async (req, res) => {
       }));
 
       console.log('final',ticket)
-      console.log('adding a text bruh')
+      console.log('adding a text')
      
       await producer('orders',JSON.stringify(ticket))
       res.send(`Ticket info sent to order`)
