@@ -11,14 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest 
     steps:
-     -  uses: actions/checkout@v2 
-     -  name: Build Docker image
-        run: 
-          cd tickets 
-          docker build -t sydsfn/tickets-demo-2 .
-     -  name: Login to Docker Hub
-        run: 
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        env: 
-          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-    
+     - uses: actions/checkout@v2 
+     - name: Build Docker image
+       run: |
+         cd tickets 
+         docker build -t sydsfn/tickets-demo-2 .
+     - name: Login to Docker Hub
+       run: |
+         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+       env: 
+         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
