@@ -3,7 +3,7 @@ name: build-tickets-pull-request
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
